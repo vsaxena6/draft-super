@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: testingdraft1
+  name: testingdraft1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testingdraft1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: testingdraft1
+    spec:
+      containers:
+      - image: draft2registry.azurecr.io/testingcontainer
+        name: testingdraft1
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
